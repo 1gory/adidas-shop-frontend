@@ -13,13 +13,12 @@ html, body {
 }
 
 body {
-  margin: 0;
   font-family: 'AvenirNext';
   font-size: 24px;
 }
 
 .products-container {
-  width: 100%;
+  width: 75%;
 }
 
 .logo-container {
