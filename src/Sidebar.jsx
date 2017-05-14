@@ -13,7 +13,9 @@ export default () => (
       <input className="search-line" />
     </form>
     <nav className="navigation">
-      <Link className="navigation-link navigation-setcion-link navigation-link-selected" to="/">sports</Link>
+      <Link className="navigation-link navigation-setcion-link navigation-link-selected" to="/">
+          sports
+      </Link>
       <nav className="navigation-section">
         <Link className="navigation-link" to="/">shoes</Link>
         <Link className="navigation-link" to="/">clothing</Link>
@@ -25,4 +27,4 @@ export default () => (
       </nav>
     </nav>
   </aside>
-)
+);

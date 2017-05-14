@@ -1,6 +1,6 @@
+import { Row, Col } from 'react-flexbox-grid';
 import React from 'react';
 import Filters from './Filters';
-import { Row, Col } from 'react-flexbox-grid';
 import ProductCard from './ProductCard';
 
 export default () => (

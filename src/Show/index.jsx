@@ -38,7 +38,8 @@ export default () => (
       <div className="product-description">
         <p>
           <span className="product-brand">Adidas</span>
-          is a German multinational corporation, headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories.
+          is a German multinational corporation, headquartered in Herzogenaurach, Germany,
+          that designs and manufactures shoes, clothing and accessories.
         </p>
       </div>
     </div>

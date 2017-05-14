@@ -7,4 +7,4 @@ export default () => (
     </button>
     <button className="filter-gender-button">woman</button>
   </div>
-)
+);
