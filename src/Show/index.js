@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import ProductSaleLabel from '../List/ProductCard/ProductSaleLabel';
 
 export default () => (
   <main>
@@ -16,43 +17,19 @@ export default () => (
               <button className="gallery-button gallery-button-black" />
               <button className="gallery-button" />
             </div>
-            <span className="product-sale-label">sale</span>
+            <ProductSaleLabel />
           </div>
           <h2 className="product-price">$170</h2>
         </div>
       </div>
       <div className="product-gallery">
-        <img
-          className="product-main-image"
-          src="images/product-big.jpg"
-          alt=""
-        />
+        <img className="product-main-image" src="images/product-big.jpg" alt="" />
         <div className="product-gallery-thumbs">
-          <img
-            className="product-gallery-thumb"
-            src="images/products/product-min-1.png"
-            alt=""
-          />
-          <img
-            className="product-gallery-thumb"
-            src="images/products/product-min-2.png"
-            alt=""
-          />
-          <img
-            className="product-gallery-thumb"
-            src="images/products/product-min-3.png"
-            alt=""
-          />
-          <img
-            className="product-gallery-thumb"
-            src="images/products/product-min-4.png"
-            alt=""
-          />
-          <img
-            className="product-gallery-thumb"
-            src="images/hamburger.png"
-            alt=""
-          />
+          <img className="product-gallery-thumb" src="images/products/product-min-1.png" alt="" />
+          <img className="product-gallery-thumb" src="images/products/product-min-2.png" alt="" />
+          <img className="product-gallery-thumb" src="images/products/product-min-3.png" alt="" />
+          <img className="product-gallery-thumb" src="images/products/product-min-4.png" alt="" />
+          <img className="product-gallery-thumb" src="images/hamburger.png" alt="" />
           <button className="product-gallery-more-photo-button">
             see more photos
           </button>

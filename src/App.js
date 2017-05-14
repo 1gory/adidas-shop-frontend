@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import List from "./List";
-import Show from "./Show";
-import Sidebar from "./Sidebar";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import List from './List';
+import Show from './Show';
+import Sidebar from './Sidebar';
 
 class App extends Component {
   render() {
