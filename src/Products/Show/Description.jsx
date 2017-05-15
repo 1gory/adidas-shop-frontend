@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Description = styled.p`
-  font-family: 'AvenirNextReqular';
+  font-family: 'AvenirNextRegular';
   color: #d8d8d8;
   font-size: 33px;
   line-height: 50px;

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   color: #4d42f8;
   padding-top: 11px;
   padding-bottom: 11px;
-  padding-left: 24px;
+  padding-left: 14px;
   text-transform: uppercase;
   border-bottom: 3px solid #e7e7e7;
   margin-bottom: 22px;
