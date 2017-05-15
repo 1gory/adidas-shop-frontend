@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 
-const Description = styled.div`
+const Description = styled.p`
   font-family: 'AvenirNextReqular';
   color: #d8d8d8;
   font-size: 33px;
@@ -16,10 +16,8 @@ const Brand = styled.span`
 
 export default () => (
   <Description>
-    <p>
-      <Brand>Adidas</Brand>{' '}
-      is a German multinational corporation, headquartered in Herzogenaurach, Germany,
-      that designs and manufactures shoes, clothing and accessories.
-    </p>
+    <Brand>Adidas</Brand>{' '}
+    is a German multinational corporation, headquartered in Herzogenaurach, Germany,
+    that designs and manufactures shoes, clothing and accessories.
   </Description>
 );

@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 
 const Gallery = styled.div`
   height: 480px;

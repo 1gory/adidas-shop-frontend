@@ -1,10 +1,10 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 import Description from './Description';
 import Header from './Header';
 import Gallery from './Gallery';
 
-const ProductContainer = styled.div`
+const Wrapper = styled.div`
   padding: 25px 30px 0 30px;
 `;
 
@@ -24,11 +24,11 @@ const BuyNowButton = styled.button`
 
 export default () => (
   <main>
-    <ProductContainer>
+    <Wrapper>
       <Header />
       <Gallery />
       <Description />
-    </ProductContainer>
+    </Wrapper>
     <BuyNowButton>buy now</BuyNowButton>
   </main>
 );

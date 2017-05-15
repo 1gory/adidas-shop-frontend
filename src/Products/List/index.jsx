@@ -1,45 +1,45 @@
+import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import React from 'react';
 import Filters from './Filters';
-import ProductCard from './Card';
+import Card from './Card';
 
-const Products = styled.div`
+const List = styled.div`
   margin-left: 12px;
   margin-right: 12px;
   flex-wrap: wrap;
 `;
 
-const ProductsContainer = styled.main`
+const Wrapper = styled.main`
   width: 75%;
 `;
 
 export default () => (
-  <ProductsContainer>
+  <Wrapper>
     <Filters />
-    <Products>
+    <List>
       <Row>
         <Col lg={4}>
-          <ProductCard price={170} hasDiscount imgSrc={'./images/products/bitmap.jpg'} />
+          <Card price={170} hasDiscount imgSrc={'./images/products/shoes3.jpg'} />
         </Col>
         <Col lg={4}>
-          <ProductCard price={240.99} imgSrc={'./images/products/bitmap-gray.jpg'} />
+          <Card price={240.99} imgSrc={'./images/products/shoes1.jpg'} />
         </Col>
         <Col lg={4}>
-          <ProductCard price={1024} imgSrc={'./images/products/bitmap-gray.jpg'} />
+          <Card price={1024} imgSrc={'./images/products/shoes2.jpg'} />
         </Col>
       </Row>
       <Row>
         <Col lg={4}>
-          <ProductCard price={170} imgSrc={'./images/products/bitmap.jpg'} />
+          <Card price={170} imgSrc={'./images/products/shoes3.jpg'} />
         </Col>
         <Col lg={4}>
-          <ProductCard price={170} hasDiscount imgSrc={'./images/products/shoes.jpg'} />
+          <Card price={170} hasDiscount imgSrc={'./images/products/shoes2.jpg'} />
         </Col>
         <Col lg={4}>
-          <ProductCard price={170} imgSrc={'./images/products/bitmap-gray.jpg'} />
+          <Card price={170} imgSrc={'./images/products/shoes1.jpg'} />
         </Col>
       </Row>
-    </Products>
-  </ProductsContainer>
+    </List>
+  </Wrapper>
 );

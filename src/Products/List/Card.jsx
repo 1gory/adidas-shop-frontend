@@ -1,6 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Label from '../../components/Label';
 
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   padding-bottom: 24px;
 `;
 
-const CardContent = styled.div`
+const Content = styled.div`
   position: relative;
   background-color: #f4f4f4;
   padding: 9px;
@@ -43,13 +43,13 @@ const Image = styled.img`
 
 const Card = props => (
   <Wrapper>
-    <CardContent>
+    <Content>
       {props.hasDiscount && <SaleLabel>sale</SaleLabel>}
       <Image src={props.imgSrc} alt="" />
       <BuyButton hasDiscount={props.hasDiscount} to="/product">
         ${props.price}
       </BuyButton>
-    </CardContent>
+    </Content>
   </Wrapper>
 );
 

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 
-const GalleryButton = styled.button`
+const Button = styled.button`
   background-color: ${props => (props.color ? props.color : 'buttonface')}
   border: none;
   width: 18px;
@@ -12,9 +12,9 @@ const GalleryButton = styled.button`
 
 export default () => (
   <div>
-    <GalleryButton />
-    <GalleryButton color={'#4d87ca'} />
-    <GalleryButton color={'#4a4a4a'} />
-    <GalleryButton />
+    <Button />
+    <Button color={'#4d87ca'} />
+    <Button color={'#4a4a4a'} />
+    <Button />
   </div>
 );

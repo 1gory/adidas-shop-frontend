@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Gender from './Gender';
 import Sizes from './Sizes';
 
-const GenderBar = styled.div`
+const Wrapper = styled.div`
   color: #4d42f8;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -15,7 +15,7 @@ const GenderBar = styled.div`
   margin-bottom: 22px;
 `;
 
-const FilterIcon = styled.img`
+const Icon = styled.img`
   background-color: #ebebeb;
   padding: 11px 8px;
   width: 39px;
@@ -24,9 +24,9 @@ const FilterIcon = styled.img`
 `;
 
 export default () => (
-  <GenderBar>
-    <FilterIcon src={require('./filterIcon.png')} alt="" />
+  <Wrapper>
+    <Icon src={require('./filterIcon.png')} alt="" />
     <Gender />
     <Sizes />
-  </GenderBar>
+  </Wrapper>
 );

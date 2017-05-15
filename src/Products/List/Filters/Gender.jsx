@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FilterGenderButton = styled.button`
+const GenderButton = styled.button`
   border: none;
   font-size: 24px;
   font-family: 'AvenirNext';
@@ -10,7 +10,7 @@ const FilterGenderButton = styled.button`
   color: ${props => (props.isSelected ? '#4d42f8' : '#dedede')};
 `;
 
-const Filters = styled.div`
+const Wrapper = styled.div`
   display: inline-block;
   vertical-align: middle;
   padding: 10px;
@@ -18,10 +18,8 @@ const Filters = styled.div`
 `;
 
 export default () => (
-  <Filters>
-    <FilterGenderButton isSelected>
-      man
-    </FilterGenderButton>
-    <FilterGenderButton>woman</FilterGenderButton>
-  </Filters>
+  <Wrapper>
+    <GenderButton isSelected>man</GenderButton>
+    <GenderButton>woman</GenderButton>
+  </Wrapper>
 );

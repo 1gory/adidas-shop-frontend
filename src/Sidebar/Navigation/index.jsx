@@ -1,14 +1,14 @@
 /* eslint-disable global-require */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Navigation = styled.nav`
+const Wrapper = styled.nav`
   margin-top: 150px;
 `;
 
-const NavigationLink = styled(Link)`
+const SubLink = styled(NavLink)`
   display: block;
   padding-bottom: 10px;
   margin-top: 15px;
@@ -23,14 +23,14 @@ const NavigationLink = styled(Link)`
   }
 `;
 
-const NavigationSectionLink = styled(NavigationLink)`
+const SectionLink = styled(SubLink)`
   margin-bottom: 0;
   padding-bottom: 0;
   margin-top: 30px;
   font-family: 'AvenirNext';
 `;
 
-const NavigationSectionLinkSelected = styled(NavigationSectionLink)`
+const SectionSelected = styled(SectionLink)`
   margin-right: 20px;
   color: white;
 
@@ -50,18 +50,16 @@ const Section = styled.nav`
 `;
 
 export default () => (
-  <Navigation>
-    <NavigationSectionLinkSelected to="/">
-      sports
-    </NavigationSectionLinkSelected>
+  <Wrapper>
+    <SectionSelected to="/">sports</SectionSelected>
     <Section>
-      <NavigationLink to="/">shoes</NavigationLink>
-      <NavigationLink to="/">clothing</NavigationLink>
-      <NavigationLink to="/">accesories</NavigationLink>
+      <SubLink to="/">shoes</SubLink>
+      <SubLink to="/">clothing</SubLink>
+      <SubLink to="/">accesories</SubLink>
     </Section>
     <nav>
-      <NavigationSectionLink to="/">brands</NavigationSectionLink>
-      <NavigationSectionLink to="/">micoach</NavigationSectionLink>
+      <SectionLink to="/">brands</SectionLink>
+      <SectionLink to="/">micoach</SectionLink>
     </nav>
-  </Navigation>
+  </Wrapper>
 );

@@ -8,14 +8,14 @@ const Logo = styled.div`
   padding-top: 31px;
 `;
 
-const LogoImage = styled.img`
+const Image = styled.img`
   padding: 15px 10px;
 `;
 
 export default () => (
   <Logo>
     <Link to="/">
-      <LogoImage src={require('./logo.png')} alt="" />
+      <Image src={require('./logo.png')} alt="" />
     </Link>
   </Logo>
 );
