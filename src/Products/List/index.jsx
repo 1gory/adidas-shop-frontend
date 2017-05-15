@@ -1,12 +1,23 @@
+import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import React from 'react';
 import Filters from './Filters';
-import ProductCard from './ProductCard';
+import ProductCard from './Card';
+
+const Products = styled.div`
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-wrap: wrap;
+`;
+
+const ProductsContainer = styled.main`
+  width: 75%;
+`;
 
 export default () => (
-  <main className="products-container">
+  <ProductsContainer>
     <Filters />
-    <div className="products">
+    <Products>
       <Row>
         <Col lg={4}>
           <ProductCard price={170} hasDiscount imgSrc={'./images/products/bitmap.jpg'} />
@@ -29,6 +40,6 @@ export default () => (
           <ProductCard price={170} imgSrc={'./images/products/bitmap-gray.jpg'} />
         </Col>
       </Row>
-    </div>
-  </main>
+    </Products>
+  </ProductsContainer>
 );
