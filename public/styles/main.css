@@ -8,7 +8,7 @@
   src: url('../fonts/avenir-next-regular.woff') format('woff');
 }
 
-html, body {
+html, body, #root {
   height:100%;
 }
 

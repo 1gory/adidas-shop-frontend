@@ -20,7 +20,7 @@ const Thumbs = styled.div`
   display: flex;
 `;
 
-const Thumb = styled.div`
+const Thumb = styled.img`
   display: block;
 `;
 
