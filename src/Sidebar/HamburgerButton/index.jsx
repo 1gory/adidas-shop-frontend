@@ -5,29 +5,22 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Logo = styled.div`
-  padding-top: 30px;
+  display: none;
 
   @media (max-width: 768px) {
-    padding-top: 0;
+    display: block;
   }
 `;
 
 const Image = styled.img`
-  width: 74px;
-  height: 54px;
-  padding: 20px 10px;
-
-  @media (max-width: 768px) {
-    width: 45px;
-    height: 30px;
-    padding: 0;
-  }
+  width: 40px;
+  height: 30px;
 `;
 
 export default () => (
   <Logo>
     <Link to="/">
-      <Image src={require('./logo.png')} alt="" />
+      <Image src={require('./menu-icon.png')} alt="" />
     </Link>
   </Logo>
 );

@@ -21,9 +21,15 @@ const Input = styled.input`
   font-size: 20px;
 `;
 
+const Wrapper = styled.form`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 export default () => (
-  <form>
+  <Wrapper>
     <Image src={require('./search-icon.png')} alt="" />
     <Input />
-  </form>
+  </Wrapper>
 );

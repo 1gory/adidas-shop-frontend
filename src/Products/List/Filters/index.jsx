@@ -21,6 +21,10 @@ const Icon = styled.img`
   width: 39px;
   height: 33px;
   vertical-align: middle;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default () => (

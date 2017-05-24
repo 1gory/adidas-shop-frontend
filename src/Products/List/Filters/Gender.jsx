@@ -8,6 +8,11 @@ const GenderButton = styled.button`
   background: transparent;
   text-transform: uppercase;
   color: ${props => (props.isSelected ? '#4d42f8' : '#dedede')};
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    padding-right: 10px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -15,6 +20,12 @@ const Wrapper = styled.div`
   vertical-align: middle;
   padding: 10px;
   margin-left: 10px;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding: 0;
+    margin-left: 0;
+  }
 `;
 
 export default () => (

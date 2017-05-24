@@ -8,6 +8,10 @@ import Sidebar from './Sidebar';
 const Wrapper = styled.div`
   display: flex;
   min-height: 100%;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export default () => (

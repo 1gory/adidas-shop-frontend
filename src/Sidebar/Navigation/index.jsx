@@ -6,6 +6,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.nav`
   margin-top: 150px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SubLink = styled(NavLink)`

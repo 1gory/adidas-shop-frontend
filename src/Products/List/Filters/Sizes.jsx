@@ -8,6 +8,11 @@ const Wrapper = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   vertical-align: middle;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    display: block;
+  }
 `;
 
 const SizeButtons = styled.div`
