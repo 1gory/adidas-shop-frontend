@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Logo = styled.div`
+const Wrapper = styled.div`
   display: none;
 
   @media (max-width: 768px) {
@@ -18,9 +18,9 @@ const Image = styled.img`
 `;
 
 export default () => (
-  <Logo>
+  <Wrapper>
     <Link to="/">
       <Image src={require('./menu-icon.png')} alt="" />
     </Link>
-  </Logo>
+  </Wrapper>
 );

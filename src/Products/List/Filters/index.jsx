@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   text-transform: uppercase;
   border-bottom: 3px solid #e7e7e7;
   margin-bottom: 22px;
+
+  @media (max-width: 768px) {
+    padding-left: 15px;
+  }
 `;
 
 const Icon = styled.img`
