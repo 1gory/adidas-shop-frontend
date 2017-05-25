@@ -1,11 +1,12 @@
 /* eslint-disable global-require */
+/* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: none;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     display: block;
@@ -17,10 +18,8 @@ const Image = styled.img`
   height: 30px;
 `;
 
-export default () => (
+export default ({ onClick }) => (
   <Wrapper>
-    <Link to="/">
-      <Image src={require('./menu-icon.png')} alt="" />
-    </Link>
+    <Image onClick={onClick} src={require('./icon.png')} alt="" />
   </Wrapper>
 );
