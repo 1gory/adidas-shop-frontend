@@ -13,8 +13,8 @@ const Logo = styled.div`
 `;
 
 const Image = styled.img`
-  width: 74px;
-  height: 54px;
+  width: 75px;
+  height: 55px;
   padding: 20px 10px;
 
   @media (max-width: 768px) {
