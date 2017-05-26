@@ -18,7 +18,7 @@ const Aside = styled.aside`
   }
 `;
 
-const Icons = styled.div`
+const Wrapper = styled.div`
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -44,10 +44,10 @@ export default class extends Component {
   render() {
     return (
       <Aside>
-        <Icons>
+        <Wrapper>
           <Logo />
           <Hamburger onClick={this.handleClick} />
-        </Icons>
+        </Wrapper>
         <Search />
         <Navigation isOpened={this.state.isOpened} />
       </Aside>

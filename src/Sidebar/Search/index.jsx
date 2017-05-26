@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-
 import React from 'react';
 import styled from 'styled-components';
 

@@ -1,6 +1,3 @@
-/* eslint-disable global-require */
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
@@ -10,7 +7,7 @@ const Wrapper = styled.nav`
   padding: 150px 0;
 
   @media (max-width: 768px) {
-    display: ${props => !props.isOpened && 'none'};
+    display: ${props => (props.isOpened ? 'block' : 'none')};
   }
 `;
 

@@ -1,6 +1,3 @@
-/* eslint-disable global-require */
-/* eslint react/prop-types: 0 */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
