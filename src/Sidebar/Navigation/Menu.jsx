@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import arrow from './nav-arrow.svg';
 
 const Wrapper = styled.div`
     margin-bottom: 30px;
   `;
 
-const Button = styled.div`
+const Button = styled.button`
   text-transform: uppercase;
+  text-indent: 20px;
   margin-right: 20px;
   color: white;
   cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
 
   &:after {
     content: '';
     position: absolute;
     width: 14px;
     height: 9px;
-    margin-top: 12px;
-    margin-left: 7px;
-    background: url(${require('./nav-arrow.png')});
+    margin: 10px;
+    background: url(${arrow});
   }
 `;
 

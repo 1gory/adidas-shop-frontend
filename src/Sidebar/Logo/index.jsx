@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from './logo.svg';
 
 const Logo = styled.div`
   padding-top: 30px;
@@ -25,7 +26,7 @@ const Image = styled.img`
 export default () => (
   <Logo>
     <Link to="/">
-      <Image src={require('./logo.png')} alt="" />
+      <Image src={logo} alt="" />
     </Link>
   </Logo>
 );
