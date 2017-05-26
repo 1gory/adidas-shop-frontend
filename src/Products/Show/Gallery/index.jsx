@@ -29,6 +29,8 @@ const MorePhoto = styled.button`
   color: #c0c0c0;
   width: 50px;
   text-align: left;
+  font-size: 14px;
+  font-family: 'AvenirNextRegular';
 `;
 
 export default () => (
