@@ -1,7 +1,6 @@
-/* eslint-disable global-require */
-
 import React from 'react';
 import styled from 'styled-components';
+import searchIcon from './search-icon.svg';
 
 const Image = styled.img`
   padding-left: 10px;
@@ -11,6 +10,7 @@ const Image = styled.img`
 `;
 
 const Input = styled.input`
+  outline: none;
   border: none;
   border-bottom: 4px solid #373737;
   box-sizing: border-box;
@@ -21,9 +21,15 @@ const Input = styled.input`
   font-size: 20px;
 `;
 
+const Wrapper = styled.form`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 export default () => (
-  <form>
-    <Image src={require('./search-icon.png')} alt="" />
+  <Wrapper>
+    <Image src={searchIcon} alt="" />
     <Input />
-  </form>
+  </Wrapper>
 );
