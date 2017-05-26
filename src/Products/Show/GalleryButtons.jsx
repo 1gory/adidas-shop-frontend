@@ -12,9 +12,9 @@ const Button = styled.button`
 
 export default () => (
   <div>
-    <Button color='#c5c5c5' />
-    <Button color='#4d87ca' />
-    <Button color='#4a4a4a' />
-    <Button color='#e0e0e0' />
+    <Button color="#c5c5c5" />
+    <Button color="#4d87ca" />
+    <Button color="#4a4a4a" />
+    <Button color="#e0e0e0" />
   </div>
 );
