@@ -6,6 +6,10 @@ import GalleryButtons from './GalleryButtons';
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 const Price = styled.h2`
@@ -16,6 +20,12 @@ const Price = styled.h2`
   margin-top: 20px;
 `;
 
+const Break = styled.br`
+  @media (max-width: 768px) {
+    display:none;
+  }
+`;
+
 const Name = styled.h2`
   font-size: 64px;
   text-transform: uppercase;
@@ -23,6 +33,10 @@ const Name = styled.h2`
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 14px;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 const SaveButton = styled.button`
@@ -35,6 +49,10 @@ const SaveButton = styled.button`
   font-family: 'AvenirNext';
   color: white;
   background-color: #e3e3e3;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Details = styled.div`
@@ -48,7 +66,7 @@ const SaleLabel = styled(Label)`
 export default () => (
   <Header>
     <div>
-      <Name>Ultra<br /> boost</Name>
+      <Name>Ultra<Break /> boost</Name>
       <SaveButton>Save</SaveButton>
     </div>
     <div>

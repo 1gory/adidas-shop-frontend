@@ -5,7 +5,7 @@ import Header from './Header';
 import Gallery from './Gallery';
 
 const Wrapper = styled.div`
-  padding: 25px 30px 0 30px;
+  position: relative;
 `;
 
 const BuyNowButton = styled.button`
@@ -20,6 +20,10 @@ const BuyNowButton = styled.button`
   padding: 35px;
   margin: 0;
   background-image: linear-gradient(107deg, #0c09bf, #966dd8);
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export default () => (
