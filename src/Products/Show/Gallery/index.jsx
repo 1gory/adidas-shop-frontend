@@ -1,15 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Gallery = styled.div`
-  //height: 480px;
-  //display: flex;
-  //align-items: flex-end;
-`;
-
 const MainImage = styled.img`
-  border-style: none;
   width: 80%;
+  max-width: 700px;
   display: block;
   margin: 0 auto;
   padding 30px;
@@ -26,17 +20,24 @@ const Thumbs = styled.div`
 const Thumb = styled.img`
   display: block;
   width: 20%;
+  height: 20%;
+  cursor: pointer;
+  margin: 10px;
+
+  &:hover {
+    border: 5px solid #e8e8ea;
+    margin: 5px;
+  }
 `;
 
 export default () => (
-  <Gallery>
+  <div>
     <MainImage src={require('./product-big.jpg')} alt="" />
     <Thumbs>
       <Thumb src={require('./product-min-1.png')} alt="" />
       <Thumb src={require('./product-min-2.png')} alt="" />
       <Thumb src={require('./product-min-3.png')} alt="" />
       <Thumb src={require('./product-min-4.png')} alt="" />
-      <Thumb src={require('./product-min-2.png')} alt="" />
     </Thumbs>
-  </Gallery>
+  </div>
 );

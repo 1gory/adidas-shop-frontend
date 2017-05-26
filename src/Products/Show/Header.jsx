@@ -10,6 +10,11 @@ const Header = styled.div`
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: relative;
+  }
 `;
 
 const Price = styled.h2`
@@ -18,6 +23,12 @@ const Price = styled.h2`
   font-weight: normal;
   text-align: right;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const Break = styled.br`
@@ -57,10 +68,28 @@ const SaveButton = styled.button`
 
 const Details = styled.div`
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+`;
+
+const Wrapper = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
 `;
 
 const SaleLabel = styled(Label)`
   margin-left: 18px;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export default () => (
@@ -69,12 +98,13 @@ export default () => (
       <Name>Ultra<Break /> boost</Name>
       <SaveButton>Save</SaveButton>
     </div>
-    <div>
+    <Wrapper>
       <Details>
         <GalleryButtons />
         <SaleLabel>sale</SaleLabel>
       </Details>
+
       <Price>$170</Price>
-    </div>
+    </Wrapper>
   </Header>
 );
