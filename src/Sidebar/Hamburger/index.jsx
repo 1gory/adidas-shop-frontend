@@ -1,10 +1,9 @@
-/* eslint-disable global-require */
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Image = styled.img`
+  width: 40px;
+  height: 30px;
   display: none;
   cursor: pointer;
 
@@ -13,13 +12,4 @@ const Wrapper = styled.div`
   }
 `;
 
-const Image = styled.img`
-  width: 40px;
-  height: 30px;
-`;
-
-export default ({ onClick }) => (
-  <Wrapper>
-    <Image onClick={onClick} src={require('./icon.png')} alt="" />
-  </Wrapper>
-);
+export default ({ onClick }) => <Image onClick={onClick} src={require('./icon.png')} alt="" />;
