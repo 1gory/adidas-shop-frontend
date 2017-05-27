@@ -92,17 +92,19 @@ const SaleLabel = styled(Label)`
   }
 `;
 
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.state = { color: '' };
+    this.state = { selectedColorIndex: 0 };
 
-    this.setColor = this.setColor.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  setColor(color) {
+  handleClick(index) {
     this.setState({
-      color,
+      selectedColorIndex: index,
     });
   }
 
@@ -111,15 +113,14 @@ export default class extends Component {
       <Header>
         <div>
           <Name>Ultra<Break /> boost</Name>
-          <SaveButton color={this.state.color}>Save</SaveButton>
+          <SaveButton color={colors[this.state.selectedColorIndex]}>Save</SaveButton>
         </div>
         <Wrapper>
           <Details>
-            <GalleryButtons setColor={this.setColor} />
+            <GalleryButtons handleClick={this.handleClick} colors={colors} />
             <SaleLabel>sale</SaleLabel>
           </Details>
-
-          <Price color={this.state.color}>$170</Price>
+          <Price color={colors[this.state.selectedColorIndex]}>$170</Price>
         </Wrapper>
       </Header>
     );

@@ -33,46 +33,38 @@ const Thumb = styled.img`
 `;
 
 const images = [
-  {
-    src: require('./product-1.jpg'),
-  },
-  {
-    src: require('./product-2.jpg'),
-  },
-  {
-    src: require('./product-3.jpg'),
-  },
-  {
-    src: require('./product-4.jpg'),
-  },
+  require('./product-1.jpg'),
+  require('./product-2.jpg'),
+  require('./product-3.jpg'),
+  require('./product-4.jpg'),
 ];
 
 export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageSrc: require('./product-4.jpg'),
+      selectedImageIndex: 3,
     };
 
-    this.setImageSrc = this.setImageSrc.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  setImageSrc(imageSrc) {
+  handleClick(index) {
     this.setState({
-      imageSrc,
+      selectedImageIndex: index,
     });
   }
 
   render() {
     return (
       <div>
-        <MainImage src={this.state.imageSrc} alt="" />
+        <MainImage src={images[this.state.selectedImageIndex]} alt="" />
         <Thumbs>
-          {images.map(image => (
+          {images.map((image, index) => (
             <Thumb
-              isSelected={this.state.imageSrc === image.src}
-              onClick={() => this.setImageSrc(image.src)}
-              src={image.src}
+              isSelected={this.state.selectedImageIndex === index}
+              onClick={() => this.handleClick(index)}
+              src={images[index]}
               alt=""
             />
           ))}

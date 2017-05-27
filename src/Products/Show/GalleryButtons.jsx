@@ -12,10 +12,8 @@ const Button = styled.button`
   margin-left: 13px;
 `;
 
-const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
-
-export default ({ setColor }) => (
+export default ({ handleClick, colors }) => (
   <div>
-    {colors.map(color => <Button onClick={() => setColor(color)} color={color} />)}
+    {colors.map((color, index) => <Button onClick={() => handleClick(index)} color={color} />)}
   </div>
 );
