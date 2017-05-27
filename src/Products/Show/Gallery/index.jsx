@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MainImage = styled.img`
   width: 80%;
-  max-width: 700px;
+  min-width: 350px;
   display: block;
   margin: 0 auto;
   padding 30px;
