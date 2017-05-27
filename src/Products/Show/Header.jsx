@@ -51,6 +51,7 @@ const Name = styled.h2`
 `;
 
 const SaveButton = styled.button`
+  outline: none;
   border: none;
   border-radius: 25px;
   text-transform: uppercase;

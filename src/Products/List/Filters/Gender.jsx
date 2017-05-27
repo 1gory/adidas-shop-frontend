@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GenderButton = styled.button`
+  cursor: pointer;
+  outline: none;
   border: none;
   font-size: 24px;
   font-family: 'AvenirNext';
