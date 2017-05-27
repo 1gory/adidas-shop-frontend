@@ -18,6 +18,7 @@ const Button = styled.button`
   font-family: inherit;
 
   &:after {
+    transform: ${props => (props.isOpened ? 'rotate(180deg)' : 'none')};
     content: '';
     position: absolute;
     width: 14px;
@@ -47,7 +48,9 @@ export default class extends Component {
   render() {
     return (
       <Wrapper>
-        <Button onClick={this.handleClick}>{this.props.title}</Button>
+        <Button isOpened={this.state.isOpened} onClick={this.handleClick}>
+          {this.props.title}
+        </Button>
         {this.state.isOpened && this.props.children}
       </Wrapper>
     );

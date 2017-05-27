@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Label from '../../components/Label';
 import GalleryButtons from './GalleryButtons';
@@ -19,7 +19,7 @@ const Header = styled.div`
 
 const Price = styled.h2`
   font-size: 80px;
-  color: #e2e2e2;
+  color: ${props => props.color || '#e3e3e3'};
   font-weight: normal;
   text-align: right;
   margin-top: 20px;
@@ -59,7 +59,7 @@ const SaveButton = styled.button`
   width: 75px;
   font-family: 'AvenirNext';
   color: white;
-  background-color: #e3e3e3;
+  background-color: ${props => props.color || '#e3e3e3'};
 
   @media (max-width: 768px) {
     display: none;
@@ -92,19 +92,36 @@ const SaleLabel = styled(Label)`
   }
 `;
 
-export default () => (
-  <Header>
-    <div>
-      <Name>Ultra<Break /> boost</Name>
-      <SaveButton>Save</SaveButton>
-    </div>
-    <Wrapper>
-      <Details>
-        <GalleryButtons />
-        <SaleLabel>sale</SaleLabel>
-      </Details>
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { color: '' };
 
-      <Price>$170</Price>
-    </Wrapper>
-  </Header>
-);
+    this.setColor = this.setColor.bind(this);
+  }
+
+  setColor(color) {
+    this.setState({
+      color,
+    });
+  }
+
+  render() {
+    return (
+      <Header>
+        <div>
+          <Name>Ultra<Break /> boost</Name>
+          <SaveButton color={this.state.color}>Save</SaveButton>
+        </div>
+        <Wrapper>
+          <Details>
+            <GalleryButtons setColor={this.setColor} />
+            <SaleLabel>sale</SaleLabel>
+          </Details>
+
+          <Price color={this.state.color}>$170</Price>
+        </Wrapper>
+      </Header>
+    );
+  }
+}

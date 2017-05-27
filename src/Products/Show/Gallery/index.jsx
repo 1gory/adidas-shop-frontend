@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const MainImage = styled.img`
@@ -23,6 +23,8 @@ const Thumb = styled.img`
   height: 20%;
   cursor: pointer;
   margin: 10px;
+  border: ${props => props.isSelected && '5px solid #e8e8ea'};
+  margin: ${props => props.isSelected && '5px'};
 
   &:hover {
     border: 5px solid #e8e8ea;
@@ -30,14 +32,52 @@ const Thumb = styled.img`
   }
 `;
 
-export default () => (
-  <div>
-    <MainImage src={require('./product-big.jpg')} alt="" />
-    <Thumbs>
-      <Thumb src={require('./product-min-1.png')} alt="" />
-      <Thumb src={require('./product-min-2.png')} alt="" />
-      <Thumb src={require('./product-min-3.png')} alt="" />
-      <Thumb src={require('./product-min-4.png')} alt="" />
-    </Thumbs>
-  </div>
-);
+const images = [
+  {
+    src: require('./product-1.jpg'),
+  },
+  {
+    src: require('./product-2.jpg'),
+  },
+  {
+    src: require('./product-3.jpg'),
+  },
+  {
+    src: require('./product-4.jpg'),
+  },
+];
+
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageSrc: require('./product-4.jpg'),
+    };
+
+    this.setImageSrc = this.setImageSrc.bind(this);
+  }
+
+  setImageSrc(imageSrc) {
+    this.setState({
+      imageSrc,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <MainImage src={this.state.imageSrc} alt="" />
+        <Thumbs>
+          {images.map(image => (
+            <Thumb
+              isSelected={this.state.imageSrc === image.src}
+              onClick={() => this.setImageSrc(image.src)}
+              src={image.src}
+              alt=""
+            />
+          ))}
+        </Thumbs>
+      </div>
+    );
+  }
+}
