@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   background-color: ${props => props.color}
+  outline: none;
+  cursor: pointer;
   border: none;
   width: 18px;
   height: 18px;
@@ -10,11 +12,8 @@ const Button = styled.button`
   margin-left: 13px;
 `;
 
-export default () => (
+export default ({ handleClick, colors }) => (
   <div>
-    <Button color="#c5c5c5" />
-    <Button color="#4d87ca" />
-    <Button color="#4a4a4a" />
-    <Button color="#e0e0e0" />
+    {colors.map((color, index) => <Button onClick={() => handleClick(index)} color={color} />)}
   </div>
 );

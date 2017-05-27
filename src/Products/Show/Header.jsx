@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Label from '../../components/Label';
 import GalleryButtons from './GalleryButtons';
@@ -19,7 +19,7 @@ const Header = styled.div`
 
 const Price = styled.h2`
   font-size: 80px;
-  color: #e2e2e2;
+  color: ${props => props.color || '#e3e3e3'};
   font-weight: normal;
   text-align: right;
   margin-top: 20px;
@@ -59,7 +59,7 @@ const SaveButton = styled.button`
   width: 75px;
   font-family: 'AvenirNext';
   color: white;
-  background-color: #e3e3e3;
+  background-color: ${props => props.color || '#e3e3e3'};
 
   @media (max-width: 768px) {
     display: none;
@@ -92,19 +92,37 @@ const SaleLabel = styled(Label)`
   }
 `;
 
-export default () => (
-  <Header>
-    <div>
-      <Name>Ultra<Break /> boost</Name>
-      <SaveButton>Save</SaveButton>
-    </div>
-    <Wrapper>
-      <Details>
-        <GalleryButtons />
-        <SaleLabel>sale</SaleLabel>
-      </Details>
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
-      <Price>$170</Price>
-    </Wrapper>
-  </Header>
-);
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedColorIndex: 0 };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(index) {
+    this.setState({
+      selectedColorIndex: index,
+    });
+  }
+
+  render() {
+    return (
+      <Header>
+        <div>
+          <Name>Ultra<Break /> boost</Name>
+          <SaveButton color={colors[this.state.selectedColorIndex]}>Save</SaveButton>
+        </div>
+        <Wrapper>
+          <Details>
+            <GalleryButtons handleClick={this.handleClick} colors={colors} />
+            <SaleLabel>sale</SaleLabel>
+          </Details>
+          <Price color={colors[this.state.selectedColorIndex]}>$170</Price>
+        </Wrapper>
+      </Header>
+    );
+  }
+}
