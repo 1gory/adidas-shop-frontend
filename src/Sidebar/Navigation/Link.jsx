@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   display: block;
   padding-bottom: 10px;
   margin-top: 15px;
@@ -15,6 +15,12 @@ const StyledLink = styled(Link)`
   &:hover {
     color: white;
   }
+
+  &.active {
+    color: #ffffff;
+  }
 `;
 
-export default props => <StyledLink to={props.to}>{props.children}</StyledLink>;
+export default props => (
+  <StyledLink activeClassName="active" to={props.to}>{props.children}</StyledLink>
+);
