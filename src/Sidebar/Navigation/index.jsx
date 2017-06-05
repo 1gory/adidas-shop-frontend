@@ -14,19 +14,19 @@ const Wrapper = styled.nav`
 export default ({ isOpened }) => (
   <Wrapper isOpened={isOpened}>
     <Menu title="football">
-      <Link to="/">shoes</Link>
-      <Link to="/">clothing</Link>
-      <Link to="/">accessories</Link>
+      <Link to="/products/football/shoes">shoes</Link>
+      <Link to="/products/football/clothing">clothing</Link>
+      <Link to="/products/football/accessories">accessories</Link>
     </Menu>
     <Menu title="running">
-      <Link to="/">shoes</Link>
-      <Link to="/">clothing</Link>
-      <Link to="/">accessories</Link>
+      <Link to="/products/running/shoes">shoes</Link>
+      <Link to="/products/running/clothing">clothing</Link>
+      <Link to="/products/running/accessories">accessories</Link>
     </Menu>
     <Menu title="basketball">
-      <Link to="/">shoes</Link>
-      <Link to="/">clothing</Link>
-      <Link to="/">accessories</Link>
+      <Link to="/products/basketball/shoes">shoes</Link>
+      <Link to="/products/basketball/clothing">clothing</Link>
+      <Link to="/products/basketball/accessories">accessories</Link>
     </Menu>
   </Wrapper>
 );

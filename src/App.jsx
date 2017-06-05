@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import List from './Products/List';
 import Show from './Products/Show';
 import Sidebar from './Sidebar';
@@ -18,8 +18,9 @@ export default () => (
   <Router>
     <Wrapper>
       <Sidebar />
-      <Route exact path="/" component={List} />
-      <Route path="/product" component={Show} />
+      <Redirect from="/" to="/products/football/shoes" />
+      <Route exact path="/products/:group/:type" component={List} />
+      <Route path="/product/:group/:type/:id" component={Show} />
     </Wrapper>
   </Router>
 );
