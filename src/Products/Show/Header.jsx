@@ -31,12 +31,6 @@ const Price = styled.h2`
   }
 `;
 
-const Break = styled.br`
-  @media (max-width: 768px) {
-    display:none;
-  }
-`;
-
 const Name = styled.h2`
   font-size: 64px;
   text-transform: uppercase;
@@ -113,7 +107,7 @@ export default class extends Component {
     return (
       <Header>
         <div>
-          <Name>Ultra<Break /> boost</Name>
+          <Name>{this.props.name}</Name>
           <SaveButton color={colors[this.state.selectedColorIndex]}>Save</SaveButton>
         </div>
         <Wrapper>
@@ -121,7 +115,7 @@ export default class extends Component {
             <GalleryButtons handleClick={this.handleClick} colors={colors} />
             <SaleLabel>sale</SaleLabel>
           </Details>
-          <Price color={colors[this.state.selectedColorIndex]}>$170</Price>
+          <Price color={colors[this.state.selectedColorIndex]}>${this.props.price}</Price>
         </Wrapper>
       </Header>
     );

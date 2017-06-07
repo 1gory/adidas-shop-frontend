@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Description from './Description';
 import Header from './Header';
 import Gallery from './Gallery';
+import get from '../../api/resources';
 
 const Wrapper = styled.div`
   position: relative;
@@ -26,13 +27,26 @@ const BuyNowButton = styled.button`
   }
 `;
 
-export default () => (
-  <main>
-    <Wrapper>
-      <Header />
-      <Gallery />
-      <Description />
-    </Wrapper>
-    <BuyNowButton>buy now</BuyNowButton>
-  </main>
-);
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+
+    get(props.match.url).then((data) => {
+      this.setState(data);
+    });
+  }
+
+  render() {
+    return (
+      <main>
+        <Wrapper>
+          <Header name={this.state.title} price={this.state.price} />
+          <Gallery />
+          <Description description={this.state.description} />
+        </Wrapper>
+        <BuyNowButton>buy now</BuyNowButton>
+      </main>
+    );
+  }
+}

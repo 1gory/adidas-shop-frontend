@@ -18,14 +18,8 @@ const Description = styled.p`
   }
 `;
 
-const Brand = styled.span`
-  color: #6e6e6e;
-`;
-
-export default () => (
+export default props => (
   <Description>
-    <Brand>Adidas</Brand>{' '}
-    is a German multinational corporation, headquartered in Herzogenaurach, Germany,
-    that designs and manufactures shoes, clothing and accessories.
+    {props.description}
   </Description>
 );

@@ -18,9 +18,9 @@ export default () => (
   <Router>
     <Wrapper>
       <Sidebar />
-      <Redirect from="/" to="/products/football/shoes" />
+      <Redirect from="/" to="/products/football/cleats" />
+      <Route path="/products/:group/:type/:id" component={Show} />
       <Route exact path="/products/:group/:type" component={List} />
-      <Route path="/product/:group/:type/:id" component={Show} />
     </Wrapper>
   </Router>
 );

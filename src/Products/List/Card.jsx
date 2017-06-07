@@ -46,7 +46,7 @@ const Card = props => (
     <Content>
       {props.hasDiscount && <SaleLabel>sale</SaleLabel>}
       <Image src={props.imgSrc} alt="" />
-      <BuyButton hasDiscount={props.hasDiscount} to="/product/football/shoes/1">
+      <BuyButton hasDiscount={props.hasDiscount} to={props.to}>
         ${props.price}
       </BuyButton>
     </Content>
