@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Filters from './Filters';
 import Card from './Card';
-import get from '../../api/resources';
-import getImage from '../../api/cdn';
+import get from '../../api/getResource';
+import getImage from '../../api/getImage';
 
 const List = styled.div`
   margin-left: 12px;
@@ -20,21 +20,25 @@ export default class extends Component {
       products: [],
     };
 
-    this.updateProducts = this.updateProducts.bind(this);
-    get(props.match.url).then(data => this.updateProducts(data.items));
+    this.load = this.load.bind(this);
+  }
+
+  componentWillMount() {
+    this.load(this.props);
   }
 
   componentWillReceiveProps(props) {
-    get(props.match.url).then(data => this.updateProducts(data.items));
+    this.load(props);
   }
 
-  updateProducts(data) {
-    const products = data.map((product) => {
-      const imageUrl = getImage(product.images[0].id, product.images[0].fileName, 256);
-      return { price: product.price, image: imageUrl, id: product.id };
+  load(props) {
+    get(props.match.url).then((data) => {
+      const products = data.items.map((product) => {
+        const imageUrl = getImage(product.images[0].id, product.images[0].fileName, 256);
+        return { price: product.price, image: imageUrl, id: product.id };
+      });
+      this.setState({ products });
     });
-
-    this.setState({ products });
   }
 
   render() {

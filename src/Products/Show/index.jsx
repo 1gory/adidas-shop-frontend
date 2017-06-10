@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Description from './Description';
 import Header from './Header';
 import Gallery from './Gallery';
-import get from '../../api/resources';
+import get from '../../api/getResource';
 
 const Wrapper = styled.div`
   position: relative;
@@ -31,8 +31,10 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
 
-    get(props.match.url).then((data) => {
+  componentWillMount() {
+    get(this.props.match.url).then((data) => {
       this.setState(data);
     });
   }
@@ -42,7 +44,7 @@ export default class extends Component {
       <main>
         <Wrapper>
           <Header name={this.state.title} price={this.state.price} />
-          <Gallery />
+          <Gallery images={this.state.images} />
           <Description description={this.state.description} />
         </Wrapper>
         <BuyNowButton>buy now</BuyNowButton>
