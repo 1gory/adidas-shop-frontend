@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import Filters from './Filters';
 import Card from './Card';
 import { get } from '../../api';
 import transformInputValues from '../../functions/transformInputValues';
 
 const List = styled.div`
-  margin-left: 12px;
-  margin-right: 12px;
+  margin: 12px;
   flex-wrap: wrap;
 `;
 
@@ -21,7 +19,6 @@ export default class extends Component {
     };
 
     this.load = this.load.bind(this);
-    // this.transformInputValues = this.transformInputValues.bind(this);
   }
 
   componentWillMount() {
@@ -41,7 +38,6 @@ export default class extends Component {
   render() {
     return (
       <main>
-        <Filters />
         <List>
           <Row>
             {this.state.products.map(product => (
