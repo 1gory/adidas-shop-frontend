@@ -8,7 +8,11 @@ const MainImage = styled.img`
   display: block;
   margin: 0 auto;
   padding 30px;
-  padding-top: 50px;
+  padding-top: 200px;
+
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
 `;
 
 const Thumbs = styled.div`
