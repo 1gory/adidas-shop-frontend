@@ -12,5 +12,5 @@ deploy:
   script:
   - npm run deploy
   on:
-    branch: feat/add-ci-deployment
+    branch: master
   skip_cleanup: true
