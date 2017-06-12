@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Description from './Description';
 import Header from './Header';
 import Gallery from './Gallery';
-import get from '../../api/getResource';
+import { get } from '../../api';
 
 const Wrapper = styled.div`
   position: relative;

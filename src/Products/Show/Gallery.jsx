@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import getImage from '../../api/getImage';
+import getImage from '../../functions/getImage';
 
 const MainImage = styled.img`
-  width: 80%;
+  width: 50%;
   min-width: 350px;
   display: block;
   margin: 0 auto;
