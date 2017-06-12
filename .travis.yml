@@ -3,5 +3,14 @@ node_js:
   - "node"
 install:
   - npm install
+before_script:
+  - npm install now
 script:
   - npm run lint
+deploy:
+  provider: script
+  script:
+  - npm run deploy
+  on:
+    branch: feat/add-ci-deployment
+  skip_cleanup: true
