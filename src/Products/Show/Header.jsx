@@ -117,7 +117,7 @@ export default class extends Component {
             <GalleryButtons handleClick={this.handleClick} colors={colors} />
             <SaleLabel>sale</SaleLabel>
           </Details>
-          <Price color={colors[this.state.selectedColorIndex]}>${this.props.price / 100}</Price>
+          <Price color={colors[this.state.selectedColorIndex]}>${this.props.price}</Price>
         </Wrapper>
       </Header>
     );

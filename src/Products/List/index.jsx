@@ -31,7 +31,7 @@ export default class extends Component {
 
   load(props) {
     get(props.match.url).then((data) => {
-      this.setState({ products: transformInputValues(data) });
+      this.setState({ products: data.items.map(values => transformInputValues(values)) });
     });
   }
 
@@ -43,7 +43,7 @@ export default class extends Component {
             {this.state.products.map(product => (
               <Col xs={12} sm={6} md={4} lg={3}>
                 <Card
-                  price={product.price / 100}
+                  price={product.price}
                   hasDiscount={false}
                   imgSrc={product.image}
                   to={`${this.props.match.url}/${product.id}`}
