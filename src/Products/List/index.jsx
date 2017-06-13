@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import Card from './Card';
 import { get } from '../../api';
-import transformInputValues from '../../functions/transformInputValues';
+import getImage from '../../functions/getImage';
 
 const List = styled.div`
   margin: 12px;
@@ -30,8 +30,8 @@ export default class extends Component {
   }
 
   load(props) {
-    get(props.match.url).then((data) => {
-      this.setState({ products: data.items.map(values => transformInputValues(values)) });
+    get(props.match.url).then(({ items: products }) => {
+      this.setState({ products });
     });
   }
 
@@ -43,9 +43,9 @@ export default class extends Component {
             {this.state.products.map(product => (
               <Col xs={12} sm={6} md={4} lg={3}>
                 <Card
-                  price={product.price}
+                  price={product.price / 100}
                   hasDiscount={false}
-                  imgSrc={product.image}
+                  imgSrc={getImage(product.images[0].id, product.images[0].fileName, 256)}
                   to={`${this.props.match.url}/${product.id}`}
                 />
               </Col>
