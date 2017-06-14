@@ -4,6 +4,7 @@ import Description from './Description';
 import Header from './Header';
 import Gallery from './Gallery';
 import { get } from '../../api';
+import transformInputValues from '../functions/transformInputValues';
 
 const Wrapper = styled.div`
   position: relative;
@@ -35,7 +36,7 @@ export default class extends Component {
 
   componentWillMount() {
     get(this.props.match.url).then((data) => {
-      this.setState(data);
+      this.setState(transformInputValues(data));
     });
   }
 
@@ -43,7 +44,7 @@ export default class extends Component {
     return (
       <main>
         <Wrapper>
-          <Header name={this.state.title} price={this.state.price / 100} />
+          <Header name={this.state.title} price={this.state.price} />
           <Gallery images={this.state.images} />
           <Description description={this.state.description} />
         </Wrapper>

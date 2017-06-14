@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import getImage from '../../functions/getImage';
+import getImage from '../functions/getImage';
 
 const MainImage = styled.img`
   width: 50%;
