@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Hamburger from './Hamburger';
-import Search from './Search';
 import Navigation from './Navigation';
 
 const Aside = styled.aside`
@@ -48,7 +47,6 @@ export default class extends Component {
           <Logo />
           <Hamburger onClick={this.handleClick} />
         </Wrapper>
-        <Search />
         <Navigation isOpened={this.state.isOpened} />
       </Aside>
     );
